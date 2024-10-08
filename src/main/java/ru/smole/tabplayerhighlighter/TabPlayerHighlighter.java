@@ -9,6 +9,5 @@ public class TabPlayerHighlighter implements ClientModInitializer {
     
     @Override
     public void onInitializeClient() {
-    
     }
 }

@@ -1,0 +1,24 @@
+{
+	"schemaVersion": 1,
+	"id": "tab-player-highlighter",
+	"version": "${version}",
+	"name": "TabPlayerHighlighter",
+	"authors": [
+		"Smole17"
+	],
+	"license": "unlicense",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"ru.smole.tabplayerhighlighter.TabPlayerHighlighter"
+		]
+	},
+	"mixins": [
+		"tabplayerhighlighter.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"minecraft": "${minecraft_version}",
+		"owo": ">=${owo_version}"
+	}
+}

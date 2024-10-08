@@ -1,0 +1,45 @@
+plugins {
+    id "fabric-loom" version "1.8.6"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+    maven { url = "https://maven.wispforest.io/" }
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:1.18.34"
+    annotationProcessor "org.projectlombok:lombok:1.18.34"
+
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation annotationProcessor("io.wispforest:owo-lib:${project.owo_version}")
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "loader_version", project.loader_version
+    inputs.property "owo_version", project.owo_version
+    filteringCharset "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version,
+                "minecraft_version": project.minecraft_version,
+                "loader_version": project.loader_version,
+                "owo_version": project.owo_version
+    }
+}
+
+java {
+    withSourcesJar()
+}
+
+remapJar {
+    archiveBaseName = base.archivesName
+}
+
+tasks.withType(JavaCompile)*.options*.encoding = "UTF-8"

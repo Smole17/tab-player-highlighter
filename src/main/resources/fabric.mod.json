@@ -6,7 +6,7 @@
 	"authors": [
 		"DeL1TMe"
 	],
-	"license": "unlicense",
+	"license": "Apache-2.0",
 	"environment": "client",
 	"entrypoints": {
 		"client": [

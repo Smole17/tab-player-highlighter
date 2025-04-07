@@ -8,5 +8,5 @@ import java.util.List;
 @Modmenu(modId = "tabplayerhighlighter")
 public class TabConfigModel {
     public List<String> players = List.of("");
-    public String apiUrl = "https://kpbspm.del1t.me/assets/img/apitph/roleizdiscord.php"; // Добавляем URL для API
+    public String apiUrl = "";
 }
